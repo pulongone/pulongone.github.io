@@ -1,0 +1,1401 @@
+/* main.css ==============================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap')
+
+/*Variable*/
+$blue: #1166f5
+$red: #ec827d
+$yellow: #f5c225
+
+/*Mixin*/
+@mixin center
+	display: flex
+	justify-content: center
+	align-items: center
+@mixin hide
+	opacity: 0
+	visibility: hidden
+@mixin show
+	opacity: 1
+	visibility: visible
+// @mixin kv-bg
+// 	background-image: url(../img/elements.png)
+// 	text-indent: -9999px
+
+/*Reset*/
+.clearfix:before,.clearfix:after
+	content: ""
+	display: table
+.clearfix:after
+	clear: both
+.clearfix
+	zoom: 1
+	display: block
+.hide
+	display: none
+
+::-moz-selection
+	background: #000
+	color: #fff
+::selection
+	background: #000
+	color: #fff
+	text-decoration: none
+::-webkit-input-placeholder
+	color: #999
+::-moz-placeholder
+	color:#999
+
+*:focus
+	outline: none
+a
+	color: #444
+	text-decoration: none
+	transition: color .4s
+a:hover
+	color: $red
+
+*::-webkit-media-controls-overlay-play-button
+	display: none !important
+	-webkit-appearance: none
+
+
+/*Body*/
+// #g-loader
+// 	width: 100%
+// 	height: 100%
+// 	position: fixed
+// 	top: 0
+// 	left: 0
+// 	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 36%,rgba(198,198,198,1) 100%)
+// 	display: flex
+// 	justify-content: center
+// 	align-items: center
+// 	+show
+// 	transition: 1s
+// 	z-index: 101
+// 	text-align: center
+// 	+hide
+// 	.center
+// 		width: 100%
+// 		height: 150px
+// 		color: #000
+// 		p
+// 			font-size: 12px
+// 			letter-spacing: 5px
+// 			margin: 15px 0
+// 		.bar
+// 			width: 100%
+// 			height: 5px
+// 			background-color: #ccc
+// 			position: relative
+// 			.move
+// 				width: 20%
+// 				height: 5px
+// 				background-color: #e7211b
+// 				position: absolute
+// 				animation: bar-move .5s ease infinite
+// 				@keyframes bar-move
+// 					0%
+// 						left: 0%
+// 						width: 0%
+// 					50%
+// 						left: 40%
+// 						width: 20%
+// 					100%
+// 						left: 100%
+// 						width: 0%
+// 	&.is-loaded
+// 		+hide
+// .color-blue
+// 	color: $blue
+// .color-red
+// 	color: $red
+// .color-pink
+// 	color: $red
+// .color-green
+// 	color: #8bc34a
+// .color-yellow
+// 	color: $yellow
+
+
+// [class^=g-bt-]
+// 	width: 50%
+// 	display: inline-block
+// 	position: relative
+// 	overflow: hidden
+// 	text-align: center
+// 	color: #fff
+// 	transition: .5s
+// 	background: $blue
+// 	//text-shadow: 2px 2px 0 rgba(#000,.5)
+// 	border-radius: 50px
+// 	box-shadow: 0 10px 10px rgba(#000,.2)
+// 	font-weight: bold
+// 	font-size: 28px
+// 	line-height: 2
+// 	font-family: 'Josefin Sans', 'Microsoft JhengHei', sans-serif
+// 	cursor: pointer
+// 	&:before
+// 		content: ''
+// 		background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 8%,rgba(255,255,255,1) 49%,rgba(255,255,255,0) 93%,rgba(255,255,255,0) 100%)
+// 		position: absolute
+// 		top: 0
+// 		left: -100%
+// 		width: 100%
+// 		height: 100%
+// 		transition: 1s
+// 		animation: bt_shine 2s ease infinite
+// 		@keyframes bt_shine
+// 			0%
+// 				left: -100%
+// 			50%, 100%
+// 				left: 100%
+// 	span
+// 	i.icon-arrow
+// 		margin-left: 3%
+// 		&:before,&:after
+// 			content: ''
+// 			width: 6%
+// 			height: 0
+// 			padding-bottom: 10%
+// 			background: url(../img/icon-right-fff.svg) no-repeat center
+// 			background-size: 100%
+// 			display: inline-block
+// 			vertical-align: middle
+// 			animation: arrow_shine .2s infinite alternate
+// 		&:after
+// 			animation-delay: -.1s
+// 	&:hover
+// 		background: #000
+// 		color: #fff
+
+// .g-bt-2
+// 	background-color: $red
+
+// .bt-shine
+// 	position: relative
+// 	overflow: hidden
+// 	transition: .5s
+// 	&:before
+// 		content: ''
+// 		background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 8%, rgba(255,255,255,1) 49%, rgba(255,255,255,0) 93%, rgba(255,255,255,0) 100%)
+// 		background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 8%,rgba(255,255,255,1) 49%,rgba(255,255,255,0) 93%,rgba(255,255,255,0) 100%)
+// 		background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 8%,rgba(255,255,255,1) 49%,rgba(255,255,255,0) 93%,rgba(255,255,255,0) 100%)
+// 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 )
+// 		position: absolute
+// 		top: 0
+// 		left: -100%
+// 		width: 100%
+// 		height: 100%
+// 		transition: 1s
+// 		animation: bt_shine 2s ease infinite
+// 		@keyframes bt_shine
+// 			0%
+// 				left: -100%
+// 			50%, 100%
+// 				left: 100%
+
+// .msg-box
+// 	background: rgba(#000, .7)
+// 	backdrop-filter: blur(8px)
+// 	position: fixed
+// 	top: 0
+// 	left: 0
+// 	width: 100%
+// 	height: 100%
+// 	opacity: 0
+// 	visibility: hidden
+// 	transition: .2s
+// 	z-index: 0
+// 	transform: scale(1)
+// 	perspective: 700px
+// 	pointer-events: none
+// 	&.is-active
+// 		opacity: 1
+// 		visibility: visible
+// 		z-index: 102
+// 		pointer-events: auto
+// 	>.close
+// 		width: 100%
+// 		height: 100%
+// 		position: absolute
+// 		top: 0
+// 		left: 0
+// 	.msg-wrap
+// 		background: #fff
+// 		max-width: 550px
+// 		width: 90%
+// 		height: 60%
+// 		max-width: 600px
+// 		max-height: 90%
+// 		position: relative
+// 		margin: 0 auto
+// 		top: 50%
+// 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+// 		border-radius: 10px
+// 		padding: 30px
+// 		transform: scale(1) translate3d(0,-50%,0)
+// 		transform-style: preserve-3d
+// 		transition-delay: .5s
+// 		transition: .5s
+// 		opacity: 0
+// 		visibility: hidden
+// 		>.close
+// 			cursor: pointer
+// 			position: absolute
+// 			top: 0
+// 			right: 0
+// 			width: 5%
+// 			height: 0
+// 			padding-bottom: 5%
+// 			transition: .2s
+// 			background: url(../img/icon-close.svg) $blue no-repeat center
+// 			background-size: 45%
+// 			border-radius: 50%
+// 			opacity: 0
+// 			transform: scale(0)
+// 			transition: .5s
+// 			transition-delay: .5s
+// 			transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275)
+// 			z-index: 5
+// 			// &:before,&:after
+// 			// 	content: ''
+// 			// 	width: 3px
+// 			// 	height: 50px
+// 			// 	background: #fff
+// 			// 	transform: rotate(45deg) translate3d(0, 0, 0)
+// 			// 	position: absolute
+// 			// 	top: 12px
+// 			// 	left: 35px
+// 			// &:before
+// 			// 	transform: rotate(45deg) translate3d(0, 0, 0)
+// 			// &:after
+// 			// 	transform: rotate(-45deg) translate3d(0, 0, 0)
+// 	&.is-active .msg-wrap
+// 		transform: scale(1) translate3d(0,-50%,0)
+// 		opacity: 1
+// 		visibility: visible
+// 		>.close
+// 			transform: scale(1)
+// 			opacity: 1
+// 			&:hover
+// 				transform: rotate(90deg)
+// 	.msg-content
+// 		overflow-y: auto
+// 		overflow-x: hidden
+// 		height: 95%
+// 		text-align: left
+// 		font-size: 20px
+// 		-webkit-overflow-scrolling: touch
+// 		header
+// 			font-size: 40px
+// 			font-weight: bold
+// 		p
+// 			//line-height: 2
+// 			// /margin: 10px 0
+// 		img
+// 			max-width: 100%
+// 		.bt
+// 			background-color: #000
+// 			border-radius: 10px
+// 			width: auto
+// 			display: block
+// 			margin: 20px auto 0
+// 			padding: 10px 20px
+// 			cursor: pointer
+// 			color: #fff
+// 			font-weight: bold
+// 			transition: .5s
+// 			position: relative
+// 			&:hover
+// 				background: $red
+// 				transition: .2s
+
+// #msg-alert
+// 	.msg-wrap
+// 		height: auto
+// 		min-height: 100px
+// 		max-width: 500px
+// 	.msg-content
+// 		text-align: center
+// 		header
+// 			font-size: 30px
+// 			margin-bottom: 20px
+
+// #msg-detail
+// 	position: absolute
+// 	background: transparent
+// 	.msg-wrap
+// 		width: 100%
+// 		height: 100%
+// 		max-width: 100%
+// 		max-height: 100%
+// 		box-shadow: none
+// 		background: transparent
+// 		padding: 0
+// 	.msg-content
+// 		height: 100%
+
+
+// .counter
+// 	position: relative
+// 	height: 2vw
+// 	height: 40px
+// 	//background-color: red
+// 	overflow: hidden
+// 	//width: 6vw
+// 	display: flex
+// 	justify-content: center
+// 	*
+// 		margin: 0
+// 		padding: 0
+// 	> div
+// 		position: relative
+// 		//float: left
+// 		//top: 100%
+// 		transform: translateY(-1000%)
+// 		transition-timing-function: cubic-bezier(0, 0.575, 0.565, 1.05)
+// 		&:nth-child(1)
+// 			transition-duration: 1s
+// 		&:nth-child(2)
+// 			transition-duration: 1.2s
+// 		&:nth-child(3)
+// 			transition-duration: 1.4s
+// 		&:nth-child(4)
+// 			transition-duration: 1.6s
+// 		&:nth-child(5)
+// 			transition-duration: 1.8s
+// 		&:nth-child(6)
+// 			transition-duration: 2s
+// 		&:nth-child(7)
+// 			transition-duration: 2.2s
+// 		&:nth-child(8)
+// 			transition-duration: 2.4s
+// 		&:nth-child(9)
+// 			transition-duration: 2.6s
+// 		&:nth-child(10)
+// 			transition-duration: 2.8s
+// 		> span
+// 			display: block
+// 			//font-size: 2.2vw
+// 			font-size: 40px
+// 			color: #fff
+			
+// 			font-weight: normal
+// 			line-height: 1
+// 	>span
+// 		display: block
+// 		//font-size: 2.2vw
+// 		font-size: 40px
+// 		color: #fff		
+// 		font-weight: normal
+// 		line-height: 1
+// 	&.is-animate > div
+// 		//top: 0
+// 		transform: translateY(0)
+// 	&.delay200
+// 		> div
+// 			&:nth-child(1)
+// 				transition-duration: 1.4s
+// 			&:nth-child(2)
+// 				transition-duration: 1.6s
+// 			&:nth-child(3)
+// 				transition-duration: 1.8s
+// 	&.delay400
+// 		> div
+// 			&:nth-child(1)
+// 				transition-duration: 1.8s
+// 			&:nth-child(2)
+// 				transition-duration: 2s
+// 			&:nth-child(3)
+// 				transition-duration: 2.2s
+// 	&.delay600
+// 		> div
+// 			&:nth-child(1)
+// 				transition-duration: 2.2s
+// 			&:nth-child(2)
+// 				transition-duration: 2.4s
+// 			&:nth-child(3)
+// 				transition-duration: 2.6s
+// 	&.delay800
+// 		> div
+// 			&:nth-child(1)
+// 				transition-duration: 2.6s
+// 			&:nth-child(2)
+// 				transition-duration: 2.8s
+// 			&:nth-child(3)
+// 				transition-duration: 3s
+
+// .g-form
+// 	li
+// 		position: relative
+// 		padding: 10px 0 10px 20%
+// 		font-size: 20px
+// 		label
+// 			//width: 20%
+// 			// position: absolute
+// 			// top: 20px
+// 			// left: 0
+// 			text-align: left
+// 			font-weight: bold
+// 			font-size: 25px
+// 		input
+// 			padding: 15px 15px
+// 			border-radius: 3px
+// 			border: 1px solid #bfbfbf
+// 			width: 100%
+// 			background: #f2f2f2
+// 			font-size: 20px
+// 			font-family: 'Josefin Sans', 'Microsoft JhengHei', sans-serif
+// 			transition: .2s
+// 			&:focus,&:hover
+// 				background-color: #fff
+// 		select
+// 			padding: 15px 15px
+// 			border-radius: 3px
+// 			border: 1px solid #bfbfbf
+// 			width: 100%
+// 			background: url(../img/icon-down-arrow.svg) no-repeat 90% 50% #f2f2f2
+// 			background-size: 15px
+// 			font-size: 20px
+// 			font-family: 'Josefin Sans', 'Microsoft JhengHei', sans-serif
+// 			-webkit-appearance: none
+// 			appearance: none
+// 			&:focus,&:hover
+// 				background-color: #fff
+// 		textarea
+// 			padding: 15px 15px
+// 			border-radius: 3px
+// 			border: 1px solid #bfbfbf
+// 			background: #f2f2f2
+// 			width: 100%
+// 			height: 150px
+// 			font-size: 20px
+// 			font-family: 'Josefin Sans', 'Microsoft JhengHei', sans-serif
+// 			transition: .2s
+// 			&:focus,&:hover
+// 				background-color: #fff
+
+// 		input[type=checkbox],input[type="radio"]
+// 			display: none
+
+		// input[type=checkbox]+label
+		// 	padding-left: 40px
+		// 	padding-right: 40px
+		// 	width: auto
+		// 	position: relative
+		// 	top: 10px
+		// 	display: inline-block
+		// 	line-height: 1.5
+		// input[type=checkbox]+label:before,
+		// input[type=checkbox]+label:after
+		// 	content: ''
+		// 	width: 30px
+		// 	height: 30px
+		// 	position: absolute
+		// 	left: 0
+		// 	top: 0			
+		// 	border-radius: 3px
+		// 	border: 0
+		// 	box-shadow: 0 0 10px rgba(#000,.2)
+		// 	background: #fff
+		// 	color: $yellow			
+		// 	background-image: url(../img/icon_checked.png)
+		// 	background-size: 36px
+		// 	transition: .5s
+		// input[type=checkbox]+label
+		// 	&:focus:before,&:hover:before
+		// 		background-color: #fff
+		// input[type=checkbox]+label:before
+		// 	background-image: none
+		// input[type=checkbox]+label:after
+		// 	background-color: transparent
+		// 	width: 0
+		// 	box-shadow: none
+		// 	top: -7px
+		// input[type=checkbox] + label:active:after, input[type=checkbox]:checked + label:after
+		// 	width: 40px
+
+
+	// 	input[type=radio]+label,input[type=checkbox]+label
+	// 		padding-left: 60px
+	// 		//padding-right: 40px
+	// 		width: auto
+	// 		position: relative
+	// 		top: 10px
+	// 		display: inline-block
+	// 		line-height: 1.5
+
+	// 	input[type=radio]+label:before,
+	// 	input[type=radio]+label:after,
+	// 	input[type=checkbox]+label:before,
+	// 	input[type=checkbox]+label:after
+	// 		content: ''
+	// 		width: 45px
+	// 		height: 45px
+	// 		position: absolute
+	// 		left: 0
+	// 		top: 0			
+			
+	// 		border-radius: 2px
+	// 		transition: .5s
+		
+	// 	input[type=radio]+label,
+	// 	input[type=checkbox]+label
+	// 		&:focus:before,&:hover:before
+	// 			background-color: #fff
+	// 	input[type=radio]+label:before,
+	// 	input[type=checkbox]+label:before
+	// 		border-radius: 2px
+	// 		box-shadow: none
+	// 		border: 0
+	// 		border: 1px solid #bfbfbf
+	// 		background-color: #f2f2f2
+
+	// 	input[type=radio]+label:after,
+	// 	input[type=checkbox]+label:after
+	// 		transform: scale(0)
+	// 		box-shadow: none
+
+	// 		background: url(../img/icon-check.svg) no-repeat 80% 50%
+	// 		background-size: 80%
+	// 		border: 0			
+
+	// 	input[type=radio] + label:active:after,
+	// 	input[type=radio]:checked + label:after,
+	// 	input[type=checkbox] + label:active:after,
+	// 	input[type=checkbox]:checked + label:after
+	// 		transform: scale(1)
+	// 	.g-bt-1
+	// 		margin: 0 auto
+	// 	a
+	// 		text-decoration: underline
+	// &.hide
+	// 	+hide
+	// 	pointer-events: none
+	// 	transition: 1s
+	// 	display: block
+
+// .video
+// 	width: 100%
+// 	margin: 0 auto
+// 	position: relative
+// 	z-index: 1
+// 	.video-wrap
+// 		position: relative
+// 		width: 100%
+// 		height: 0
+// 		padding-bottom: 56%
+// 		//border: 1px solid red
+// 		//box-shadow: 10px 10px 0 rgba(black,.2)
+// 		iframe
+// 			position: absolute
+// 			top: 0
+// 			left: 0
+// 			width: 100%
+// 			height: 100%
+// 		.img
+// 			position: absolute
+// 			overflow: hidden
+// 			float: left
+// 			width: 100%
+// 			height: 100%
+// 			z-index: 1
+// 			transition: .2s
+// 			img
+// 				width: 100%
+// 				height: 100%
+// 				transition: .5s
+// 			&:before
+// 				content: ''
+// 				width: 100%
+// 				height: 100%
+// 				//background-color: rgba(#000,.2)
+// 				position: absolute
+// 				top: 0
+// 				left: 0
+// 				z-index: 1
+// 				transition: .5s
+// 			.video-btn-play
+// 				position: absolute
+// 				top: 50%
+// 				left: 50%
+// 				transform: translate(-50%,-50%)
+// 				animation: play-jump .5s infinite alternate
+// 				@keyframes play-jump
+// 					0%
+// 						transform: translate(-50%,-50%) scale(1)
+// 					100%
+// 						transform: translate(-50%,-50%) scale(1.2)
+// 				z-index: 2
+// 		p
+// 			font-size: 15px
+// 		&.is-active
+// 			.img
+// 				+hide
+// 		&:hover
+// 			.img
+// 				img
+// 					transform: scale(1.3)
+// 				&:before
+// 					opacity: 0
+
+// .video-btn-play
+// 	// width: 100px
+// 	// height: 100px
+// 	margin: 0 auto
+// 	position: relative
+// 	cursor: pointer
+// 	text-indent: -9999px
+
+// 	width: 15%
+// 	height: 0
+// 	padding-bottom: 10%
+// 	//border: 1px solid red
+	
+// 	&:before
+// 		content: ''
+// 		width: 100px
+// 		height: 100px
+// 		border-radius: 100%
+// 		border: 10px solid $red
+// 		position: absolute
+// 		left: 50%
+// 		top: 50%
+// 		transform: translate(-50%,-50%)
+// 		box-sizing: border-box
+// 		transition: .2s	
+// 		animation: circle-jump .5s linear infinite alternate
+// 		@keyframes circle-jump
+// 			0%
+// 				transform: translate(-50%,-50%) scale(1)
+// 			100%
+// 				transform: translate(-50%,-50%) scale(1.2)				
+// 	&:after
+// 		content: ''
+// 		width: 0
+// 		height: 0
+// 		border-style: solid
+// 		border-width: 20px 0 20px 30px
+// 		border-color: transparent transparent transparent $red
+// 		position: absolute
+// 		top: 50%
+// 		left: 53%
+// 		transform: translate(-50%,-50%)
+// 		transition: .1s
+// 	&:hover
+// 		&:before
+// 			border: 3px solid rgba(#fff,1)
+// 			transform: translate(-50%,-50%) scale(1.5)
+// 		&:after
+// 			transform: translate(-50%,-50%) scale(1.2)
+
+// .splitEffect
+// 	overflow: hidden
+// 	white-space: nowrap
+// 	span
+// 		display: inline-block
+// 		transform: translateY(100%)
+// 		//transition: .5s
+// 		//transition-timing-function: cubic-bezier(0, 0.575, 0.565, 1.05)
+		
+// 		@for $i from 1 through 30
+// 			&:nth-of-type(#{$i})
+// 				//transition-delay: $i * .05s
+// 				animation-delay: $i * .03s !important
+	
+// 	&.is-animate
+// 		span
+// 			//transform: translateY(0)
+// 			animation: se1 .5s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards
+// 			@keyframes se1
+// 				0%
+// 					transform: translateY(100%)
+// 				100%
+// 					transform: translateY(0%)
+// 		&.delay200
+// 			span
+// 				@for $i from 1 through 30
+// 					&:nth-of-type(#{$i})
+// 						animation-delay: $i * .03s + .2s !important
+// 		&.delay400
+// 			span
+// 				@for $i from 1 through 30
+// 					&:nth-of-type(#{$i})
+// 						animation-delay: $i * .03s + .4s !important
+// 		&.delay600
+// 			span
+// 				@for $i from 1 through 30
+// 					&:nth-of-type(#{$i})
+// 						animation-delay: $i * .03s + .6s !important
+// 		&.delay800
+// 			span
+// 				@for $i from 1 through 30
+// 					&:nth-of-type(#{$i})
+// 						animation-delay: $i * .03s + .8s !important
+// 		&.delay1000
+// 			span
+// 				@for $i from 1 through 30
+// 					&:nth-of-type(#{$i})
+// 						animation-delay: $i * .03s + 1s !important
+
+// #g-gotop
+// 	position: fixed
+// 	bottom: 20px
+// 	right: 20px
+// 	z-index: 2
+// 	cursor: pointer
+// 	transition: .2s
+// 	background: url(../img/icon-up-fff.svg) no-repeat center $red
+// 	background-size: 50%
+// 	border-radius: 50%
+// 	border: 1px solid #fff
+// 	width: 50px
+// 	height: 50px
+// 	box-shadow: 0 10px 10px rgba(#000,.2)
+// 	text-indent: -9999px
+// 	+hide
+// 	&:hover
+// 		background-color: $blue
+// 		background-position: center 30%
+// 	&.active
+// 		+show
+
+
+// @keyframes bg_colorful
+// 	0%,100%
+// 		background-color: $blue
+// 	33%
+// 		background-color: $red
+// 	66%
+// 		background-color: $blue
+
+
+
+// .tns-outer
+// 	position: relative
+
+// .tns-item
+// 	float: left
+
+// .tns-controls,.tns-cus-controls
+// 	button,div
+// 		position: absolute
+// 		top: 50%
+// 		width: 55px
+// 		height: 55px
+// 		border-radius: 50%
+// 		background-position: center
+// 		background-repeat: no-repeat
+// 		background-size: 30%
+// 		background-color: transparent
+// 		z-index: 3
+// 		text-indent: -9999px
+// 		border: 0
+// 		transform: translateY(-50%)
+// 		background-color: $blue
+// 		cursor: pointer
+// 		&:hover
+// 			background-color: $blue
+// 		&:active
+// 			background-color: $red
+// 		&:nth-of-type(1)
+// 			left: 0
+// 			background-image: url(../img/icon-left-fff.svg)
+// 		&:nth-of-type(2)
+// 			right: 0
+// 			background-image: url(../img/icon-right-fff.svg)
+
+
+// .tns-nav
+// 	position: absolute
+// 	bottom: 0
+// 	left: 0
+// 	width: 100%
+// 	z-index: 3
+// 	text-align: center
+// 	button
+// 		width: 25px
+// 		height: 25px
+// 		border: 0
+// 		margin: 2px
+// 		position: relative
+// 		background-color: transparent
+// 		&:before,&:after
+// 			content: ''
+// 			width: 10px
+// 			height: 10px
+// 			background-color: #ddd
+// 			border-radius: 10px
+// 			position: absolute
+// 			top: 50%
+// 			left: 50%
+// 			transform: translate(-50%,-50%)
+// 			transition: .3s
+// 		&:after
+// 			transform: translate(-50%,-50%) scale(0)
+// 		&:hover
+// 			&:before,&:after
+// 				background-color: $blue
+// 		&.tns-nav-active
+// 			&:after				
+// 				background-color: $red
+// 				transform: translate(-50%,-50%) scale(1)				
+// 				z-index: 2
+
+// .tns-controls
+// 	text-align: center
+
+
+html
+	font-size: 1vw
+
+html,body
+	&.is-lock
+		width: 100%
+		height: 100%
+		//position: fixed
+		overflow: hidden
+
+body
+	font-size: 1rem
+	line-height: 1.7
+	color: #000
+	font-family: 'Josefin Sans', 'Microsoft JhengHei', sans-serif
+	overflow-x: hidden
+	overflow-y: scroll
+	//background: url(../img/temp1.jpg) no-repeat center top
+	background-size: 100%
+	text-align: center
+	&.lock
+		overflow: hidden
+*
+	text-size-adjust: none
+
+
+.g-section
+	position: relative
+	header
+		h2
+	&.is-animate
+		header
+			h2
+
+// #g-nav-trigger
+// 	width: 12.5vw
+// 	height: 12.5vw
+// 	border-bottom-left-radius: 2.3vw
+// 	border-bottom-right-radius: 2.3vw
+// 	position: fixed
+// 	top: 0
+// 	right: 1.6vw
+// 	background: #fff
+// 	cursor: pointer
+// 	z-index: 4
+// 	//display: none
+// 	box-shadow: 0 1vw 1vw rgba(#000,.1)
+// 	p
+// 		font-size: 2.7vw
+// 		margin-top: 6.5vw
+// 	>div
+// 		right: 31%
+// 		height: 3px
+// 		background: $red
+// 		display: block
+// 		position: absolute
+// 		border-radius: 50px
+// 		overflow: hidden
+// 		transition: .4s
+// 		div
+// 			background: #fff
+// 			width: 100%
+// 			height: 100%
+// 			transform: translateX(-100%)
+// 	[class^=line-]
+// 		pointer-events: auto
+// 		width: 40%
+// 		div
+// 			transition: .4s
+// 	.line-1
+// 		top: 35%
+// 	.line-2
+// 		top: 49%
+// 	.line-3
+// 		top: 63%
+// 	[class^=cross-]
+// 		top: 50%
+// 		left: 26%
+// 		opacity: 0 !important
+// 		pointer-events: none
+// 		width: 50%
+// 		div
+// 	.cross-1
+// 		transform: rotate(45deg)
+// 	.cross-2
+// 		transform: rotate(-45deg)
+// 	&.active
+// 		[class^=line-]
+// 			opacity: 0 !important
+// 			pointer-events: none
+// 			div
+// 				transform: translateX(0)
+// 		[class^=cross-]
+// 			opacity: 1 !important
+// 			pointer-events: auto
+// 			div
+// 				animation: cross_active 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards
+// 				@keyframes cross_active
+// 					0%
+// 						transform: translateX(-100%)
+// 					100%
+// 						transform: translateX(100%)	
+// 		.cross-1
+// 			div
+// 				animation-delay: 0s
+// 		.cross-2
+// 			div
+// 				animation-delay: .1s
+// 	&:hover
+// 		>div
+// 			div
+// 				transform: translateX(100%)
+// 		.line-1
+// 			div
+// 				transition-delay: 0s
+// 		.line-2
+// 			div
+// 				transition-delay: .1s
+// 		.line-3
+// 			div
+// 				transition-delay: .2s
+
+// #g-nav-sticky
+// 	width: 80%
+// 	margin: 0 auto
+// 	background: #000
+// 	position: -webkit-sticky
+// 	position: sticky
+// 	top: 0
+// 	z-index: 10
+// 	ol
+// 		display: flex
+// 		font-size: 30px
+// 		a
+// 			color: #fff
+// 			margin: 0 10px
+
+#g-wrap
+	width: 100%
+	height: 100%
+	position: relative
+	padding: 2.3rem 3.2rem
+	overflow: hidden
+
+#g-header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-bottom: 1.2rem
+	h1
+		font-size: 1.7rem
+		text-align: left
+		font-weight: bold
+		line-height: 1
+		small
+			font-weight: normal
+			font-size: .9rem
+			display: block
+			line-height: 2
+
+#g-nav
+	ol
+		display: flex
+		justify-content: flex-end
+	li
+	a
+		font-size: 1.3rem
+		margin-left: .8rem
+		padding: 0 .2rem
+		position: relative
+		&:before
+			content: ''
+			width: 0
+			height: 0.05rem
+			background: #000
+			position: absolute
+			top: 50%
+			left: 0
+			transition: .4s
+			transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000)
+		&:hover,&.active
+			&:before
+				width: 100%
+
+#g-main
+	position: relative
+	min-height: calc(100vh - 15rem)
+
+.list-page
+	position: fixed
+	top: 100%
+	opacity: 0
+	pointer-events: none
+	>ol
+		// display: flex
+		// flex-wrap: wrap
+		// justify-content: space-between
+
+		display: grid
+		grid-template-columns: repeat(auto-fill, 29.8rem)
+		grid-gap: 0rem
+		justify-content: space-between
+
+		>li
+			width: 100%
+			opacity: 0
+			position: relative
+			overflow: hidden
+	.img
+		img
+			width: 100%
+			display: block
+
+	&.active
+		position: static
+		opacity: 1
+		pointer-events: auto
+		transition: 1s
+		>ol>li
+			animation: list_li_show .5s cubic-bezier(0.230, 1.000, 0.320, 1.000) forwards
+			@keyframes list_li_show
+				0%
+					opacity: 0
+					transform: translateY(200%) scale(.5)
+				100%
+					opacity: 1
+					transform: translateY(0) scale(1)
+			@for $i from 1 through 30
+				&:nth-of-type(#{$i})
+					animation-delay: $i * .05s
+
+#list-all,#list-web,#list-graphic	
+	>ol
+		>li
+			//width: 31.8%
+			margin-bottom: 1.5rem
+			&:hover
+				.img
+					img
+						transform: scale(1.2)
+						transition: 2s
+				.txt
+					transform: scale(1)
+					opacity: 1
+	a
+		
+	.img
+		img
+			transform: scale(1)
+
+	.txt
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		+center
+		background: rgba(#fff,.5)
+		backdrop-filter: blur(1rem)
+		opacity: 0
+		transform: scale(.8)
+		transition: .3s
+		color: #fff
+		text-shadow: 0 0 2rem #000
+		h2
+			font-size: 1.3rem
+		small
+			font-size: 1rem
+			font-weight: bold
+			display: block
+
+#list-banner
+	padding: 0 11rem
+	>ol
+		grid-template-columns: repeat(auto-fill, 44.5%)
+		>li
+			//width: 40%
+			margin: 0 0 1.5rem 
+	.img
+		border: 1px solid #ccc
+		padding: .8rem
+	.txt
+		text-align: left
+		font-size: 1.2rem
+		padding-top: 1rem
+
+#list-logo
+	>ol
+		grid-template-columns: repeat(auto-fill, 29%)
+		>li
+			//width: 28.8%
+			margin-bottom: 1.5rem
+	.img
+		border: 1px solid #ccc
+	.txt
+		text-align: left
+		font-size: 1.2rem
+		padding-top: 1rem
+
+
+#list-about
+	display: flex
+	padding-bottom: 5rem
+	.img
+		width: 50%
+		img
+			margin-left: -3.2rem
+	.txt
+		width: 50%
+		text-align: left
+		.text-iam-patty
+			width: 20rem
+			height: 10rem
+			background: url(../img/text-i-am-patty.svg) no-repeat center top
+			background-size: 100%
+			display: block
+			text-indent: -9999px
+			margin-bottom: 1rem
+		.text-name
+			width: 17rem
+			height: 2.5rem
+			background: url(../img/text-name.svg) no-repeat center top
+			background-size: 100%
+			display: block
+			text-indent: -9999px
+			margin: 5rem 0 3rem
+	h3
+		font-size: 1.5rem
+		margin-top: 3rem
+		font-weight: bold
+	h4
+		font-size: 1.5rem
+		font-weight: bold
+		color: $red
+	dl
+		display: flex
+		flex-wrap: wrap
+		width: 30rem
+		dt
+			width: 60%
+			&:before
+				content: ''
+				width: .5rem
+				height: .5rem
+				border: .15rem solid $red
+				border-radius: 50rem
+				display: inline-block
+				margin-right: .5rem
+		dd
+			width: 40%
+			font-size: .9rem
+		&~h4
+			margin-top: 1rem
+
+	.column
+		display: flex
+		justify-content: space-between
+		width: 35rem
+
+	.list-dot
+		li
+			&:before
+				content: ''
+				width: .5rem
+				height: .5rem
+				border: .15rem solid $red
+				border-radius: 50rem
+				display: inline-block
+				margin-right: .5rem
+		&.has-2-col
+			column-count: 2
+
+
+#list-detail
+	img
+		width: 100%
+	&.active
+		#list-detail-close
+			opacity: 1
+			transform: scale(1)
+			&:hover
+				transform: scale(1) rotate(90deg)
+
+#list-detail-close
+	cursor: pointer
+	position: fixed
+	top: 10rem
+	right: 4.5rem
+	width: 4rem
+	height: 4rem
+	transition: .2s
+	background: url(../img/icon-close.svg) no-repeat center
+	border: .1rem solid #000
+	background-size: 45%
+	border-radius: 50%
+	opacity: 0
+	//box-shadow: .5rem .5rem 1rem rgba(#000,.2), inset .2rem .2rem 1rem rgba(#000,.2)
+	transform: scale(0)
+	transition: .5s
+	transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275)
+	z-index: 5
+
+#g-footer
+	padding: 2rem 0 0
+
+
+
+
+@media screen and (min-width: 900px)
+	.is-m
+		display: none !important
+
+@media screen and (max-width: 1200px)
+	html
+		font-size: 1.5vw
+
+	#list-about
+		.column
+			display: block
+			>div
+				&:last-child
+					margin-top: 1rem
+
+	.list-page
+		>ol
+			grid-template-columns: repeat(auto-fill, 31.5%)
+
+	#list-banner
+		padding: 0 9rem
+
+@media screen and (max-width: 900px)
+	.is-pc
+		display: none !important
+
+	html
+		font-size: 3vw
+
+	#g-wrap
+		padding: 1.5rem
+
+	#g-header
+		display: block
+		h1
+			text-align: center
+			margin: 3rem 0
+			font-size: 2.7rem
+
+	#g-nav
+		margin: 1rem 0 3rem
+		ol
+			flex-wrap: wrap
+			justify-content: center
+		a
+			margin: .2rem 1.5rem
+			display: block
+			&:hover,&.active
+				color: $red
+				&:before
+					height: 0.1rem
+					background-color: $red
+
+	.list-page
+		>ol
+			grid-template-columns: repeat(auto-fill, 48%)
+
+	#list-all,#list-web,#list-graphic
+		>ol
+			>li
+				//width: 48%
+		.txt
+			position: static
+			opacity: 1
+			display: block
+			color: #000
+			text-shadow: none
+			text-align: left
+			transform: scale(1)
+			padding-top: .5rem
+			h2
+				font-size: 1.2rem
+			p
+				font-size: 0.7rem
+
+	#list-banner
+		padding: 0 0rem
+		>ol
+			grid-template-columns: repeat(auto-fill, 45%)
+			>li
+				//width: 47%
+				margin: 0 0% 1.5rem
+		.txt
+			padding-top: 0.5rem
+
+	#list-logo
+		padding: 0 0rem
+		>ol
+			grid-template-columns: repeat(auto-fill, 45%)
+			>li
+				//width: 45%
+				margin: 0 0% 1.5rem
+		.txt
+			padding-top: 0.5rem
+
+	#list-about
+		display: block
+		.img
+			width: 112%
+			img
+				margin-left: -5%
+		.txt
+			width: 90%
+			margin-top: 2rem
+			margin-left: 5%
+			.text-iam-patty
+				width: 17rem
+				height: 8rem
+
+	#list-detail-close
+		position: absolute
+		top: -2rem
+		right: -.5rem
+		// top: 22rem
+		// right: .5rem
+
+
+@media screen and (max-width: 400px)
+	
+	.list-page
+		>ol
+			grid-template-columns: repeat(auto-fill, 100%)
+
+	#list-all,#list-web,#list-graphic
+		>ol
+			>li
+				width: 100%
+
+	#list-banner
+		>ol
+			grid-template-columns: repeat(auto-fill, 100%)
+			>li
+				width: 100%
+
+	#list-logo
+		padding: 0
+		>ol
+			grid-template-columns: repeat(auto-fill, 100%)
+			>li
+				width: 100%
+				margin: 0 0% 1.5rem
+
+
